@@ -13,4 +13,10 @@
         <constructor-arg name="age" value="23"/>
     </bean>
 
+    <!-- 通过静态工厂创建对象-->
+    <bean class="top.xiongmingcai.spring.instance.PersonStaticFactory" factory-method="createPerson" id="person3">
+        <constructor-arg name="name" value="蓝天(静态工厂)"/>
+        <constructor-arg name="age" value="27"/>
+    </bean>
+
 </beans>
