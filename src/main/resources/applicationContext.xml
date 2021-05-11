@@ -19,4 +19,11 @@
         <constructor-arg name="age" value="27"/>
     </bean>
 
+    <!-- 通过实例工厂创建对象-->
+    <bean class="top.xiongmingcai.spring.instance.PersonFactory" id="personFactory"/>
+
+    <bean factory-bean="personFactory" factory-method="createPerson" id="person4">
+        <constructor-arg name="name" value="绿地(实例工厂)"/>
+        <constructor-arg name="age" value="29"/>
+    </bean>
 </beans>
