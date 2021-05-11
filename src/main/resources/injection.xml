@@ -3,5 +3,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean class="top.xiongmingcai.spring.injection.dao.UserDAOImpl" id="userDAO"/>
 
+    <bean class="top.xiongmingcai.spring.injection.service.UserServiceImpl" id="userService">
+        <!--setter方法运行时注入-->
+        <property name="userDAO" ref="userDAO"/>
+    </bean>
 </beans>
