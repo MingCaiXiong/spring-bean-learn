@@ -7,4 +7,10 @@
     <!-- 1.调用无参构造函数 -->
     <bean class="top.xiongmingcai.spring.instance.Person" id="person"/>
 
+    <!-- 2.调用有参构造函数 -->
+    <bean id="person2" class="top.xiongmingcai.spring.instance.Person">
+        <constructor-arg name="name" value="枫叶(构造函数)"/>
+        <constructor-arg name="age" value="23"/>
+    </bean>
+
 </beans>
