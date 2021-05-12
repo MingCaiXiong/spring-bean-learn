@@ -5,7 +5,10 @@ import top.xiongmingcai.spring.injection.dao.UserDAO;
 public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
-    @Override
+    public UserServiceImpl() {
+        System.out.println(this.hashCode() + ":已创建UserServiceImpl 无参构造方法  ");
+    }
+
     public void setUserDAO(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
