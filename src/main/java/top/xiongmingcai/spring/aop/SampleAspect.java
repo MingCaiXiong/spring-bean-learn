@@ -2,12 +2,21 @@ package top.xiongmingcai.spring.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 
 
 //切面类
+@Aspect
 public class SampleAspect {
+    @Pointcut("execution(public * top.xiongmingcai.spring.aop.*Service.create*(..))")
+    public void pointcut() {
+    }
+
 
     //1.前置通知
+    @Before("pointcut()")
     public void doBefore(JoinPoint jp) {
         String clzName = jp.getTarget().getClass().getName();//getTarget() 获取即将要执行的对象
         String method = jp.getSignature().getName();//即将要执行的方法
