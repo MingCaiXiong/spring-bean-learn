@@ -39,6 +39,7 @@ public class SampleAspect {
     }
 
     //4.异常通知
+    @AfterThrowing(pointcut = "pointcut()", throwing = "t")
     public void doAfterThrowing(JoinPoint jp, Throwable t) {
         System.out.println("【异常通知】" + t.getMessage());
     }

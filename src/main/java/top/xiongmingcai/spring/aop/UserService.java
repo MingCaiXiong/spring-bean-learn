@@ -10,6 +10,7 @@ public class UserService {
     public String createUser() {
         //打开事务
         System.out.println(this + ":正在调用UserService.createUser()");
+        Integer i = 1 / 0;
         //提交事务
         //catch块中回滚事务 - RuntimeException
         return "success";
