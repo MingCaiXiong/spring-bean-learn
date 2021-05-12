@@ -15,7 +15,7 @@
         <aop:aspect ref="sampleAspect">
             <!-- PointCut(切点)-->
             <aop:pointcut id="samplePC" expression="execution(* top.xiongmingcai.spring.aop.*Service.create*(..))"/>
-
+            <aop:after method="doBefore" pointcut-ref="samplePC"/>
         </aop:aspect>
     </aop:config>
 </beans>
