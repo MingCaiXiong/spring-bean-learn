@@ -1,8 +1,13 @@
 package top.xiongmingcai.spring.injection.service;
 
+import org.springframework.stereotype.Service;
 import top.xiongmingcai.spring.injection.dao.UserDAO;
 
+import javax.annotation.Resource;
+
+@Service("userService")
 public class UserServiceImpl implements UserService {
+    @Resource
     private UserDAO userDAO;
 
     public UserServiceImpl() {
