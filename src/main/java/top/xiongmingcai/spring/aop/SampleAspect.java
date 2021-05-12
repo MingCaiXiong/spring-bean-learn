@@ -14,7 +14,7 @@ public class SampleAspect {
 
 
     //1.前置通知
-    @Before("pointcut()")
+//    @Before("pointcut()")
     public void doBefore(JoinPoint jp) {
         String clzName = jp.getTarget().getClass().getName();//getTarget() 获取即将要执行的对象
         String method = jp.getSignature().getName();//即将要执行的方法
@@ -23,7 +23,7 @@ public class SampleAspect {
     }
 
     //2.后置通知
-    @After("pointcut()")
+//    @After("pointcut()")
     public void doAfter(JoinPoint jp) {
         String clzName = jp.getTarget().getClass().getName();//getTarget() 获取即将要执行的对象
         String method = jp.getSignature().getName();//即将要执行的方法
@@ -32,19 +32,20 @@ public class SampleAspect {
     }
 
     //3.返回通知
-    @AfterReturning(value = "pointcut()", returning = "ret")
+//    @AfterReturning(value = "pointcut()", returning = "ret")
     public void doAfterReturning(JoinPoint jp, Object ret) {
         System.out.println("【返回后通知】" + ret);
 
     }
 
     //4.异常通知
-    @AfterThrowing(pointcut = "pointcut()", throwing = "t")
+//    @AfterThrowing(pointcut = "pointcut()", throwing = "t")
     public void doAfterThrowing(JoinPoint jp, Throwable t) {
         System.out.println("【异常通知】" + t.getMessage());
     }
 
     //5.环绕通知
+    @Around("pointcut()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
         String clzName = pjp.getTarget().getClass().getName();//getTarget() 获取即将要执行的对象
         String method = pjp.getSignature().getName();//即将要执行的方法
