@@ -1,8 +1,6 @@
 package top.xiongmingcai.spring.injection.dao;
 
-import org.springframework.stereotype.Repository;
 
-@Repository
 public class UserDAOImpl implements UserDAO {
     public UserDAOImpl() {
         System.out.print(this.hashCode() + "已创建");
