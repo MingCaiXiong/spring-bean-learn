@@ -2,10 +2,7 @@ package top.xiongmingcai.spring.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 
 
 //切面类
@@ -35,6 +32,7 @@ public class SampleAspect {
     }
 
     //3.返回通知
+    @AfterReturning(value = "pointcut()", returning = "ret")
     public void doAfterReturning(JoinPoint jp, Object ret) {
         System.out.println("【返回后通知】" + ret);
 
