@@ -2,6 +2,7 @@ package top.xiongmingcai.spring.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -25,6 +26,7 @@ public class SampleAspect {
     }
 
     //2.后置通知
+    @After("pointcut()")
     public void doAfter(JoinPoint jp) {
         String clzName = jp.getTarget().getClass().getName();//getTarget() 获取即将要执行的对象
         String method = jp.getSignature().getName();//即将要执行的方法
